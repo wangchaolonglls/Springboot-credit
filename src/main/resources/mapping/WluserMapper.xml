@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sino.credit.mapper.WluserMapper">
+  <resultMap id="BaseResultMap" type="com.sino.credit.model.Wluser">
+    <constructor>
+      <idArg column="USER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LOGIN_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ORGANIZE_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="REPORT_TO_USER_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="CERTIFI_TYPE_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="CERTIFI_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PASSWORD" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ALLOW_CHANGE_PASSWORD" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORK_TYPE_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="USER_TYPE_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="CHECK_FLAG" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EDUCATION_TYPE_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="HOME_TEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="OFFICE_TEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MOBILE_TELE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ADDR_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EMAIL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATE_DATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="EFFECT_DATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="EXPIRE_DATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="MULTI_LOGIN_FLAG" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="LAST_LOGIN_LOG_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="TRY_TIMES" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="LOCK_FLAG" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="IS_LOGIN" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="STATE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATOR" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATE_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="MODIFIER" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MODIFY_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="REC_VER" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="QQ" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ICON" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ICON_SMALL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MSN" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ONLINE_STATUS" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="UNITS_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ISSENDMSG" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="TENANT_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.sino.credit.model.Wluser">
+    <constructor>
+      <idArg column="USER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LOGIN_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ORGANIZE_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="REPORT_TO_USER_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="CERTIFI_TYPE_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="CERTIFI_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PASSWORD" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ALLOW_CHANGE_PASSWORD" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORK_TYPE_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="USER_TYPE_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="CHECK_FLAG" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EDUCATION_TYPE_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="HOME_TEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="OFFICE_TEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MOBILE_TELE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ADDR_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EMAIL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATE_DATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="EFFECT_DATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="EXPIRE_DATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="MULTI_LOGIN_FLAG" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="LAST_LOGIN_LOG_ID" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="TRY_TIMES" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="LOCK_FLAG" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="IS_LOGIN" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="STATE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATOR" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATE_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="MODIFIER" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MODIFY_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="REC_VER" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="QQ" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ICON" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ICON_SMALL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MSN" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ONLINE_STATUS" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="UNITS_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ISSENDMSG" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="TENANT_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="REMARKS" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, CODE, LOGIN_NAME, NAME, ORGANIZE_ID, REPORT_TO_USER_ID, CERTIFI_TYPE_ID, 
+    CERTIFI_CODE, PASSWORD, ALLOW_CHANGE_PASSWORD, WORK_TYPE_ID, USER_TYPE_ID, CHECK_FLAG, 
+    EDUCATION_TYPE_ID, HOME_TEL, OFFICE_TEL, MOBILE_TELE, ADDR_ID, EMAIL, CREATE_DATE, 
+    EFFECT_DATE, EXPIRE_DATE, MULTI_LOGIN_FLAG, LAST_LOGIN_LOG_ID, TRY_TIMES, LOCK_FLAG, 
+    IS_LOGIN, STATE, CREATOR, CREATE_TIME, MODIFIER, MODIFY_TIME, REC_VER, QQ, ICON, 
+    ICON_SMALL, MSN, ONLINE_STATUS, UNITS_ID, ISSENDMSG, TENANT_ID
+  </sql>
+  <sql id="Blob_Column_List">
+    REMARKS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from wl_user
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wl_user
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.sino.credit.model.Wluser">
+    insert into wl_user (USER_ID, CODE, LOGIN_NAME, 
+      NAME, ORGANIZE_ID, REPORT_TO_USER_ID, 
+      CERTIFI_TYPE_ID, CERTIFI_CODE, PASSWORD, 
+      ALLOW_CHANGE_PASSWORD, WORK_TYPE_ID, USER_TYPE_ID, 
+      CHECK_FLAG, EDUCATION_TYPE_ID, HOME_TEL, 
+      OFFICE_TEL, MOBILE_TELE, ADDR_ID, 
+      EMAIL, CREATE_DATE, EFFECT_DATE, 
+      EXPIRE_DATE, MULTI_LOGIN_FLAG, LAST_LOGIN_LOG_ID, 
+      TRY_TIMES, LOCK_FLAG, IS_LOGIN, 
+      STATE, CREATOR, CREATE_TIME, 
+      MODIFIER, MODIFY_TIME, REC_VER, 
+      QQ, ICON, ICON_SMALL, 
+      MSN, ONLINE_STATUS, UNITS_ID, 
+      ISSENDMSG, TENANT_ID, REMARKS
+      )
+    values (#{userId,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{loginName,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{organizeId,jdbcType=VARCHAR}, #{reportToUserId,jdbcType=DOUBLE}, 
+      #{certifiTypeId,jdbcType=DOUBLE}, #{certifiCode,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{allowChangePassword,jdbcType=VARCHAR}, #{workTypeId,jdbcType=DOUBLE}, #{userTypeId,jdbcType=DOUBLE}, 
+      #{checkFlag,jdbcType=VARCHAR}, #{educationTypeId,jdbcType=DOUBLE}, #{homeTel,jdbcType=VARCHAR}, 
+      #{officeTel,jdbcType=VARCHAR}, #{mobileTele,jdbcType=VARCHAR}, #{addrId,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{effectDate,jdbcType=TIMESTAMP}, 
+      #{expireDate,jdbcType=TIMESTAMP}, #{multiLoginFlag,jdbcType=DOUBLE}, #{lastLoginLogId,jdbcType=DOUBLE}, 
+      #{tryTimes,jdbcType=DOUBLE}, #{lockFlag,jdbcType=VARCHAR}, #{isLogin,jdbcType=VARCHAR}, 
+      #{state,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{recVer,jdbcType=DOUBLE}, 
+      #{qq,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{iconSmall,jdbcType=VARCHAR}, 
+      #{msn,jdbcType=VARCHAR}, #{onlineStatus,jdbcType=VARCHAR}, #{unitsId,jdbcType=VARCHAR}, 
+      #{issendmsg,jdbcType=VARCHAR}, #{tenantId,jdbcType=VARCHAR}, #{remarks,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sino.credit.model.Wluser">
+    insert into wl_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="code != null">
+        CODE,
+      </if>
+      <if test="loginName != null">
+        LOGIN_NAME,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="organizeId != null">
+        ORGANIZE_ID,
+      </if>
+      <if test="reportToUserId != null">
+        REPORT_TO_USER_ID,
+      </if>
+      <if test="certifiTypeId != null">
+        CERTIFI_TYPE_ID,
+      </if>
+      <if test="certifiCode != null">
+        CERTIFI_CODE,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="allowChangePassword != null">
+        ALLOW_CHANGE_PASSWORD,
+      </if>
+      <if test="workTypeId != null">
+        WORK_TYPE_ID,
+      </if>
+      <if test="userTypeId != null">
+        USER_TYPE_ID,
+      </if>
+      <if test="checkFlag != null">
+        CHECK_FLAG,
+      </if>
+      <if test="educationTypeId != null">
+        EDUCATION_TYPE_ID,
+      </if>
+      <if test="homeTel != null">
+        HOME_TEL,
+      </if>
+      <if test="officeTel != null">
+        OFFICE_TEL,
+      </if>
+      <if test="mobileTele != null">
+        MOBILE_TELE,
+      </if>
+      <if test="addrId != null">
+        ADDR_ID,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="effectDate != null">
+        EFFECT_DATE,
+      </if>
+      <if test="expireDate != null">
+        EXPIRE_DATE,
+      </if>
+      <if test="multiLoginFlag != null">
+        MULTI_LOGIN_FLAG,
+      </if>
+      <if test="lastLoginLogId != null">
+        LAST_LOGIN_LOG_ID,
+      </if>
+      <if test="tryTimes != null">
+        TRY_TIMES,
+      </if>
+      <if test="lockFlag != null">
+        LOCK_FLAG,
+      </if>
+      <if test="isLogin != null">
+        IS_LOGIN,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+      <if test="creator != null">
+        CREATOR,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="modifier != null">
+        MODIFIER,
+      </if>
+      <if test="modifyTime != null">
+        MODIFY_TIME,
+      </if>
+      <if test="recVer != null">
+        REC_VER,
+      </if>
+      <if test="qq != null">
+        QQ,
+      </if>
+      <if test="icon != null">
+        ICON,
+      </if>
+      <if test="iconSmall != null">
+        ICON_SMALL,
+      </if>
+      <if test="msn != null">
+        MSN,
+      </if>
+      <if test="onlineStatus != null">
+        ONLINE_STATUS,
+      </if>
+      <if test="unitsId != null">
+        UNITS_ID,
+      </if>
+      <if test="issendmsg != null">
+        ISSENDMSG,
+      </if>
+      <if test="tenantId != null">
+        TENANT_ID,
+      </if>
+      <if test="remarks != null">
+        REMARKS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="loginName != null">
+        #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="organizeId != null">
+        #{organizeId,jdbcType=VARCHAR},
+      </if>
+      <if test="reportToUserId != null">
+        #{reportToUserId,jdbcType=DOUBLE},
+      </if>
+      <if test="certifiTypeId != null">
+        #{certifiTypeId,jdbcType=DOUBLE},
+      </if>
+      <if test="certifiCode != null">
+        #{certifiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="allowChangePassword != null">
+        #{allowChangePassword,jdbcType=VARCHAR},
+      </if>
+      <if test="workTypeId != null">
+        #{workTypeId,jdbcType=DOUBLE},
+      </if>
+      <if test="userTypeId != null">
+        #{userTypeId,jdbcType=DOUBLE},
+      </if>
+      <if test="checkFlag != null">
+        #{checkFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="educationTypeId != null">
+        #{educationTypeId,jdbcType=DOUBLE},
+      </if>
+      <if test="homeTel != null">
+        #{homeTel,jdbcType=VARCHAR},
+      </if>
+      <if test="officeTel != null">
+        #{officeTel,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileTele != null">
+        #{mobileTele,jdbcType=VARCHAR},
+      </if>
+      <if test="addrId != null">
+        #{addrId,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="effectDate != null">
+        #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expireDate != null">
+        #{expireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="multiLoginFlag != null">
+        #{multiLoginFlag,jdbcType=DOUBLE},
+      </if>
+      <if test="lastLoginLogId != null">
+        #{lastLoginLogId,jdbcType=DOUBLE},
+      </if>
+      <if test="tryTimes != null">
+        #{tryTimes,jdbcType=DOUBLE},
+      </if>
+      <if test="lockFlag != null">
+        #{lockFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="isLogin != null">
+        #{isLogin,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null">
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="recVer != null">
+        #{recVer,jdbcType=DOUBLE},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="iconSmall != null">
+        #{iconSmall,jdbcType=VARCHAR},
+      </if>
+      <if test="msn != null">
+        #{msn,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineStatus != null">
+        #{onlineStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="unitsId != null">
+        #{unitsId,jdbcType=VARCHAR},
+      </if>
+      <if test="issendmsg != null">
+        #{issendmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantId != null">
+        #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sino.credit.model.Wluser">
+    update wl_user
+    <set>
+      <if test="code != null">
+        CODE = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="loginName != null">
+        LOGIN_NAME = #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="organizeId != null">
+        ORGANIZE_ID = #{organizeId,jdbcType=VARCHAR},
+      </if>
+      <if test="reportToUserId != null">
+        REPORT_TO_USER_ID = #{reportToUserId,jdbcType=DOUBLE},
+      </if>
+      <if test="certifiTypeId != null">
+        CERTIFI_TYPE_ID = #{certifiTypeId,jdbcType=DOUBLE},
+      </if>
+      <if test="certifiCode != null">
+        CERTIFI_CODE = #{certifiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="allowChangePassword != null">
+        ALLOW_CHANGE_PASSWORD = #{allowChangePassword,jdbcType=VARCHAR},
+      </if>
+      <if test="workTypeId != null">
+        WORK_TYPE_ID = #{workTypeId,jdbcType=DOUBLE},
+      </if>
+      <if test="userTypeId != null">
+        USER_TYPE_ID = #{userTypeId,jdbcType=DOUBLE},
+      </if>
+      <if test="checkFlag != null">
+        CHECK_FLAG = #{checkFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="educationTypeId != null">
+        EDUCATION_TYPE_ID = #{educationTypeId,jdbcType=DOUBLE},
+      </if>
+      <if test="homeTel != null">
+        HOME_TEL = #{homeTel,jdbcType=VARCHAR},
+      </if>
+      <if test="officeTel != null">
+        OFFICE_TEL = #{officeTel,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileTele != null">
+        MOBILE_TELE = #{mobileTele,jdbcType=VARCHAR},
+      </if>
+      <if test="addrId != null">
+        ADDR_ID = #{addrId,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="effectDate != null">
+        EFFECT_DATE = #{effectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expireDate != null">
+        EXPIRE_DATE = #{expireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="multiLoginFlag != null">
+        MULTI_LOGIN_FLAG = #{multiLoginFlag,jdbcType=DOUBLE},
+      </if>
+      <if test="lastLoginLogId != null">
+        LAST_LOGIN_LOG_ID = #{lastLoginLogId,jdbcType=DOUBLE},
+      </if>
+      <if test="tryTimes != null">
+        TRY_TIMES = #{tryTimes,jdbcType=DOUBLE},
+      </if>
+      <if test="lockFlag != null">
+        LOCK_FLAG = #{lockFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="isLogin != null">
+        IS_LOGIN = #{isLogin,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        CREATOR = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null">
+        MODIFIER = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null">
+        MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="recVer != null">
+        REC_VER = #{recVer,jdbcType=DOUBLE},
+      </if>
+      <if test="qq != null">
+        QQ = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        ICON = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="iconSmall != null">
+        ICON_SMALL = #{iconSmall,jdbcType=VARCHAR},
+      </if>
+      <if test="msn != null">
+        MSN = #{msn,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineStatus != null">
+        ONLINE_STATUS = #{onlineStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="unitsId != null">
+        UNITS_ID = #{unitsId,jdbcType=VARCHAR},
+      </if>
+      <if test="issendmsg != null">
+        ISSENDMSG = #{issendmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantId != null">
+        TENANT_ID = #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        REMARKS = #{remarks,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.sino.credit.model.Wluser">
+    update wl_user
+    set CODE = #{code,jdbcType=VARCHAR},
+      LOGIN_NAME = #{loginName,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      ORGANIZE_ID = #{organizeId,jdbcType=VARCHAR},
+      REPORT_TO_USER_ID = #{reportToUserId,jdbcType=DOUBLE},
+      CERTIFI_TYPE_ID = #{certifiTypeId,jdbcType=DOUBLE},
+      CERTIFI_CODE = #{certifiCode,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      ALLOW_CHANGE_PASSWORD = #{allowChangePassword,jdbcType=VARCHAR},
+      WORK_TYPE_ID = #{workTypeId,jdbcType=DOUBLE},
+      USER_TYPE_ID = #{userTypeId,jdbcType=DOUBLE},
+      CHECK_FLAG = #{checkFlag,jdbcType=VARCHAR},
+      EDUCATION_TYPE_ID = #{educationTypeId,jdbcType=DOUBLE},
+      HOME_TEL = #{homeTel,jdbcType=VARCHAR},
+      OFFICE_TEL = #{officeTel,jdbcType=VARCHAR},
+      MOBILE_TELE = #{mobileTele,jdbcType=VARCHAR},
+      ADDR_ID = #{addrId,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      EFFECT_DATE = #{effectDate,jdbcType=TIMESTAMP},
+      EXPIRE_DATE = #{expireDate,jdbcType=TIMESTAMP},
+      MULTI_LOGIN_FLAG = #{multiLoginFlag,jdbcType=DOUBLE},
+      LAST_LOGIN_LOG_ID = #{lastLoginLogId,jdbcType=DOUBLE},
+      TRY_TIMES = #{tryTimes,jdbcType=DOUBLE},
+      LOCK_FLAG = #{lockFlag,jdbcType=VARCHAR},
+      IS_LOGIN = #{isLogin,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      CREATOR = #{creator,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      MODIFIER = #{modifier,jdbcType=VARCHAR},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      REC_VER = #{recVer,jdbcType=DOUBLE},
+      QQ = #{qq,jdbcType=VARCHAR},
+      ICON = #{icon,jdbcType=VARCHAR},
+      ICON_SMALL = #{iconSmall,jdbcType=VARCHAR},
+      MSN = #{msn,jdbcType=VARCHAR},
+      ONLINE_STATUS = #{onlineStatus,jdbcType=VARCHAR},
+      UNITS_ID = #{unitsId,jdbcType=VARCHAR},
+      ISSENDMSG = #{issendmsg,jdbcType=VARCHAR},
+      TENANT_ID = #{tenantId,jdbcType=VARCHAR},
+      REMARKS = #{remarks,jdbcType=LONGVARCHAR}
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sino.credit.model.Wluser">
+    update wl_user
+    set CODE = #{code,jdbcType=VARCHAR},
+      LOGIN_NAME = #{loginName,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      ORGANIZE_ID = #{organizeId,jdbcType=VARCHAR},
+      REPORT_TO_USER_ID = #{reportToUserId,jdbcType=DOUBLE},
+      CERTIFI_TYPE_ID = #{certifiTypeId,jdbcType=DOUBLE},
+      CERTIFI_CODE = #{certifiCode,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      ALLOW_CHANGE_PASSWORD = #{allowChangePassword,jdbcType=VARCHAR},
+      WORK_TYPE_ID = #{workTypeId,jdbcType=DOUBLE},
+      USER_TYPE_ID = #{userTypeId,jdbcType=DOUBLE},
+      CHECK_FLAG = #{checkFlag,jdbcType=VARCHAR},
+      EDUCATION_TYPE_ID = #{educationTypeId,jdbcType=DOUBLE},
+      HOME_TEL = #{homeTel,jdbcType=VARCHAR},
+      OFFICE_TEL = #{officeTel,jdbcType=VARCHAR},
+      MOBILE_TELE = #{mobileTele,jdbcType=VARCHAR},
+      ADDR_ID = #{addrId,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      EFFECT_DATE = #{effectDate,jdbcType=TIMESTAMP},
+      EXPIRE_DATE = #{expireDate,jdbcType=TIMESTAMP},
+      MULTI_LOGIN_FLAG = #{multiLoginFlag,jdbcType=DOUBLE},
+      LAST_LOGIN_LOG_ID = #{lastLoginLogId,jdbcType=DOUBLE},
+      TRY_TIMES = #{tryTimes,jdbcType=DOUBLE},
+      LOCK_FLAG = #{lockFlag,jdbcType=VARCHAR},
+      IS_LOGIN = #{isLogin,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      CREATOR = #{creator,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      MODIFIER = #{modifier,jdbcType=VARCHAR},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      REC_VER = #{recVer,jdbcType=DOUBLE},
+      QQ = #{qq,jdbcType=VARCHAR},
+      ICON = #{icon,jdbcType=VARCHAR},
+      ICON_SMALL = #{iconSmall,jdbcType=VARCHAR},
+      MSN = #{msn,jdbcType=VARCHAR},
+      ONLINE_STATUS = #{onlineStatus,jdbcType=VARCHAR},
+      UNITS_ID = #{unitsId,jdbcType=VARCHAR},
+      ISSENDMSG = #{issendmsg,jdbcType=VARCHAR},
+      TENANT_ID = #{tenantId,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>
